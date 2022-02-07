@@ -1,0 +1,36 @@
+<p>login works!</p>
+<div style="min-width: 100%;min-height: 200%;background-image: url('../assets/img/fondo.jpg');">
+<div class="container">
+  <br>
+  <h2 class="text-primary">LOGIN</h2>
+      <form (ngSubmit)="loginUser()" #loginform="ngForm" >
+        {{loginform.form.valid}}
+    <small class="text-danger">{{msg}}</small>
+    <div class="form-group">
+      <label for="email" class="text-danger">Email:</label>
+      <input type="email" class="form-control" [(ngModel)]="user.emailId" placeholder="Ingrese email" name="email" id="email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+      #email="ngModel"
+      [class.is-invalid]="email.invalid && email.touched"
+      >
+      <small class="text-danger" [class.d-none]="email.valid || email.untouched">El email es requerido </small>
+
+
+    </div>
+    <div class="form-group">
+      <label for="pwd" class="text-danger">Password:</label>
+      <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Enter password" name="password" id="password" required #password="ngModel"
+      [class.is-invalid]="email.invalid && email.touched"
+      >
+      <small class="text-danger" [class.d-none]="password.valid || password.untouched">la Contraseña es requerida </small>
+    </div>
+    <div class="checkbox">
+      <label class="text-danger"><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-info" >Submit</button>
+  </form>
+  <!--<small class="float-rigth" (click)="gotoregistration()">Nuevo Usuario ? Registrarse ahora</small>-->
+  <small  class="float-rigth" [routerLink]="['/registration']" class="text-danger">Nuevo Usuario ? Registrarse ahora</small>
+
+</div>
+<br><br><br><br><br><br><br>
+</div>

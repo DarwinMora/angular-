@@ -1,0 +1,44 @@
+<p>listar works!</p>
+
+<div  style="min-width: 100%;min-height: 200%;background-image: url('../assets/img/fondo.jpg');">
+  <div class="card">
+    <div class="card-header">
+      <h3>REGISTRADOS</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr >
+            <th>ID</th>
+            <th>EMAIL</th>
+            <th>PASSWORD</th>
+            <th>NOMBRE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="lef User of users">
+                 <td>{{user.id}} </td>
+                 <td>{{user.emailId}} </td>
+                 <td>{{user.userName}} </td>
+                 <td>{{user.id}} </td>
+                 <td>{{user.password}} </td>
+          </tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+
+
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+
+</div>
+<button  type="submit" [routerLink]="['/login']" type="submit" class="btn btn-info">SALIR</button>
+<br><br>
+<small class="float-rigth" [routerLink]="['/registration']" class="text-danger">Nuevo Usuario ? Registrarse ahora</small>
